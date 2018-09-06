@@ -10,7 +10,7 @@ import javax.swing.table.*;
 import java.awt.event.*;
 
 @SuppressWarnings("serial")
-public class AirExTest extends JFrame {
+public class Aer extends JFrame {
 	JTable table;
 	JPanel panel2;
 	DefaultTableModel model;
@@ -36,7 +36,7 @@ public class AirExTest extends JFrame {
 	
 
 	
-	public AirExTest() {
+	public Aer() {
 		
 		super("Simple Registration");
 		
@@ -109,10 +109,12 @@ public class AirExTest extends JFrame {
 		
 		panel2 = new JPanel();
 		panel2.setBackground(Color.WHITE);
-		panel2.setLayout(null);
+		panel2.setLayout(new GridLayout());
 		panel2.setBounds(230, 128, 422, 262);
 		panel2.setBorder(BorderFactory.createDashedBorder(Color.blue));
-		getContentPane().add(panel2);
+		contentPane.add(panel2);
+		
+		
 		
 		textArea = new JTextArea();
 		textArea.setBounds(0, 0, 422, 262);
@@ -139,6 +141,8 @@ public class AirExTest extends JFrame {
 				JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		
 		panel.add(scrollpane);
+		
+		
 		
 		
 		year = new JTextField();
@@ -189,13 +193,13 @@ public class AirExTest extends JFrame {
 		});// end of addKeyListner()
 		
 		exitButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent arg0) {  
 				try{
 					con.close();
-					System.exit(0);
+					System.exit(0);                               
 				}catch(Exception ex){
 					System.out.println(ex.getMessage());
-				}
+				}				
 			}
 		});
 		// refresh 버튼 처리
@@ -490,7 +494,7 @@ public class AirExTest extends JFrame {
 			con = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/testdba?useSSL=false", 
 					"root", "tkddls6222");
-			
+			 
 			stmt = con.createStatement();
 		
 			
@@ -501,6 +505,6 @@ public class AirExTest extends JFrame {
 	}
 	
 	public static void main(String[] args) {
-		new AirExTest();
+		new Aer ();
 	}
 }
