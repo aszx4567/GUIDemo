@@ -27,15 +27,7 @@ public class Aer extends JFrame {
 	ResultSet rst, rstLast;
 	int serialNo;
 	String k, a;
-	JTextArea textArea;
-	
-	
-
-	
-	
-	
-
-	
+	JTextArea textArea;	
 	public Aer() {
 		
 		super("Simple Registration");
@@ -444,7 +436,6 @@ public class Aer extends JFrame {
 
 		
 	}
-	
 	private void addRows(){
 		try{
 			Object[] row = null;
@@ -475,7 +466,6 @@ public class Aer extends JFrame {
 		
 		addRows();
 	}
-	
 	private void blankFields(){
 		id.setText("");
 		nameField.setText("");
@@ -483,8 +473,6 @@ public class Aer extends JFrame {
 		country.setText("");
 		textArea.setText("");
 	}
-
-	
 	public void connect(){
 		
 		
@@ -503,7 +491,6 @@ public class Aer extends JFrame {
 			System.out.println(e.getMessage());
 		}
 	}
-	
 	public static void main(String[] args) {
 		new Aer ();
 	}
